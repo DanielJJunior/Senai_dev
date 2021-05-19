@@ -33,6 +33,7 @@
             <input id="btn" type="button" value="Idade Real" onclick="idadeReal()"/> <!-- Map -->
             <input id="btn" type="button" value="Soma todas as Idades" onclick="idadeSoma()"/> <!-- Reduce -->
             <input id="btn" type="button" value="Piorar Site" onclick="mudaTudo()"/>
+            <input id="btn" type="button" value="Resetar Site" onclick="voolta()"/>
         </div>
 
         <script> 
@@ -77,53 +78,57 @@
                 }); 
             }
 
-            //MAP
             function idadeReal(){
-                var nomida = dogs.map(function(prendedor){
-                    return prendedor.nome + prendedor.idade
-                })
-                
-                nomida.forEach(lampada =>{
-                    return alert(lampada.nome + lampada.idade)
+                dogs.map(function(valor){
+                    return alert(`${valor.nome} ${valor.idade}`)
                 });
             }
 
             //REDUCE
             function idadeSoma(){
-                var somaida = dogs.reduce(function(amor,odio){
-                    return amor + odio
-                }, 0 )
-                
-                somaida.forEach(faca => {
-                return alert(faca.idade)
-                
-                }, 0);
+            const resultado = dogs.map(a => a.idade).reduce(function(acumulador, atual){
+            console.log(acumulador, atual)
+            return acumulador + atual
+            })
+            alert (resultado)
             }
-
- 
-
-
 
             function mudaTudo(){
-                document.querySelector("body").style.backgroundImage = "url('Ibageins/logo.png')"
+                document.querySelector("body").style.backgroundImage = "url('Ibageins/logo.png')";
     
-                document.getElementById("dog1").style.background = "url('')"
+                document.getElementById("dog1").style.background = "url('')";
                 document.getElementById("dog1").style.alignItems = "flex-end";
-                
-                document.getElementById("dog2").style.background = "url('')"
+                document.getElementById("dog1").style.backgroundColor = "black"
+                document.getElementById("dog1").style.fontFamily = "Impact,Charcoal,sans-serif";
+
+                document.getElementById("dog2").style.background = "url('')";
                 document.getElementById("dog2").style.alignItems = "flex-start";
+                document.getElementById("dog2").style.fontFamily = "Impact,Charcoal,sans-serif";
+                document.getElementById("dog2").style.backgroundColor = "green"
 
-                document.getElementById("dog3").style.background = "url('')"
-                
-                document.getElementById("dog4").style.background = "url('')"
+                document.getElementById("dog3").style.background = "url('')";
+                document.getElementById("dog3").style.fontFamily = "Impact,Charcoal,sans-serif";
+
+                document.getElementById("dog4").style.background = "url('')";
                 document.getElementById("dog4").style.alignItems = "flex-end";
-                
-                document.getElementById("dog5").style.background = "url('')"
-                document.getElementById("dog5").style.alignItems = "flex-start";
+                document.getElementById("dog4").style.fontFamily = "Impact,Charcoal,sans-serif";
 
-                document.querySelector("body").style.backgroundColor = "lightblue"
+                document.getElementById("dog5").style.background = "url('')";
+                    var img = document.querySelector(".imagem5");
+                    img.setAttribute("src","Ibageins/pomba.jpg")
+                document.getElementById("dog5").style.alignItems = "flex-start";
+                document.getElementById("dog5").style.fontFamily = "Impact,Charcoal,sans-serif";
+                document.getElementById("dog5").style.backgroundColor = "blue"
+                document.getElementById("h2#dog5").innerHTML = "blue"  
+                document.querySelector("body").style.backgroundColor = "lightblue";
                 
+               
             }
+
+            function voolta(){
+                document.location.reload(true)
+            }
+
         </script> 
     </body>
 </html>
